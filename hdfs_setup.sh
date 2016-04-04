@@ -2,8 +2,8 @@
 
 DSOURCES=('flow' 'dns')
 DFOLDERS=('binary' 'csv' 'hive' 'stage')
-DBNAME='duxbury'
-source /etc/duxbay.conf
+DBNAME='oni'
+source /etc/oni.conf
 
 for d in "${DSOURCES[@]}" 
 do 
@@ -26,5 +26,4 @@ for d in "${DSOURCES[@]}"
 do 
 	hive -hiveconf huser=${HUSER} -hiveconf dbname=${DBNAME} -f create_${d}_avro_parquet.hql
 done
-
 
