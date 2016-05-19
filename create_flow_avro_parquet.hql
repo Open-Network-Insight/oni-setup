@@ -19,10 +19,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ${hiveconf:dbname}.flow (
   flag STRING,
   fwd INT,
   stos INT,
-  ipkt INT,
-  ibyt INT,
-  opkt INT,
-  obyt INT,
+  ipkt BIGINT,
+  ibyt BIGINT,
+  opkt BIGINT,
+  obyt BIGINT,
   input INT,
   output INT,
   sas INT,
@@ -57,10 +57,10 @@ TBLPROPERTIES ('avro.schema.literal'='{
      ,  {"name": "flag",            "type":["string",   "null"]}
      ,  {"name": "fwd",                 "type":["int",   "null"]}
      ,  {"name": "stos",                 "type":["int",   "null"]}
-     ,  {"name": "ipkt",                 "type":["int",   "null"]}
-     ,  {"name": "ibytt",                 "type":["int",   "null"]}
-     ,  {"name": "opkt",                 "type":["int",   "null"]}
-     ,  {"name": "obyt",                 "type":["int",   "null"]}
+     ,  {"name": "ipkt",                 "type":["bigint",   "null"]}
+     ,  {"name": "ibytt",                 "type":["bigint",   "null"]}
+     ,  {"name": "opkt",                 "type":["bigint",   "null"]}
+     ,  {"name": "obyt",                 "type":["bigint",   "null"]}
      ,  {"name": "input",                 "type":["int",   "null"]}
      ,  {"name": "output",                 "type":["int",   "null"]}
      ,  {"name": "sas",                 "type":["int",   "null"]}
