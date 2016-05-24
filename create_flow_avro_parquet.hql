@@ -34,7 +34,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ${hiveconf:dbname}.flow (
 PARTITIONED BY (y INT, m INT, d INT, h int)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS PARQUET
-LOCATION '/user/${hiveconf:huser}/flow/hive'
+LOCATION '${hiveconf:huser}/flow/hive'
 TBLPROPERTIES ('avro.schema.literal'='{
     "type":   "record"
   , "name":   "FlowRecord"

@@ -16,7 +16,7 @@ CREATE EXTERNAL TABLE IF NOT EXISTS ${hiveconf:dbname}.dns (
 PARTITIONED BY (y INT, m INT, d INT, h int)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS PARQUET
-LOCATION '/user/${hiveconf:huser}/dns/hive'
+LOCATION '${hiveconf:huser}/dns/hive'
 TBLPROPERTIES ('avro.schema.literal'='{
     "type":   "record"
   , "name":   "DnsRecord"
