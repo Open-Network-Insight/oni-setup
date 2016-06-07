@@ -70,3 +70,31 @@ TBLPROPERTIES ('avro.schema.literal'='{
      ,  {"name": "rip",                    "type":["string",   "null"]}
   ]
 }');
+
+CREATE EXTERNAL TABLE IF NOT EXISTS ${hiveconf:dbname}.flow_sum (
+flow_date             STRING,
+flows                 BIGINT,
+bytes                 BIGINT,
+packets               BIGINT,
+avg_bps               BIGINT,
+avg_pps               INT,
+avg_bpp               INT
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+STORED AS PARQUET
+LOCATION '${hiveconf:huser}/flow/summary'
+TBLPROPERTIES ('avro.schema.literal'='{
+    "type":   "record"
+  , "name":   "RawFlowSummaryRecord"
+  , "namespace" : "com.cloudera.accelerators.flow_sum.avro"
+  , "fields": [
+        {"name": "flow_date",   "type":["string", "null"]}
+     ,  {"name": "flows",       "type":["bigint", "null"]}
+     ,  {"name": "bytes",       "type":["bigint", "null"]}
+     ,  {"name": "packets",     "type":["bigint", "null"]}
+     ,  {"name": "avg_bps",     "type":["bigint", "null"]}
+     ,  {"name": "avg_pps",     "type":["int", "null"]}
+     ,  {"name": "avg_bpp",     "type":["int", "null"]}
+  ]
+}');
+
