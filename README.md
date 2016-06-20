@@ -58,10 +58,10 @@ Create a pull request and contact the maintainers.
 
 ## Issues
 
-Report issues at the OpenNetworkInsight [issues] (../open-network-insight/issues) page.
+Report issues at the OpenNetworkInsight [issues] (https://github.com/Open-Network-Insight/open-network-insight/issues) page.
  
 ## Maintainers
 
-[Everardo Lopez Sandoval] (https://github.com/EverLoSa) 
-[Moises Valdovinos] (https://github.com/moy8011) 
+- [Everardo Lopez Sandoval] (https://github.com/EverLoSa) 
+- [Moises Valdovinos] (https://github.com/moy8011) 
 
