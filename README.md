@@ -14,7 +14,7 @@ oni-setup contains the scripts to setup HDFS for ONI solution. It will create th
 
 To collaborate and run oni-setup, it is required the following:
 - A running Hadoop cluster
-- Linux user account created in all nodes
+- Linux user account created in all nodes with sudo privileges
 
 ## General Description
 
