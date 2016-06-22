@@ -2,7 +2,6 @@
 
 DSOURCES=('flow' 'dns')
 DFOLDERS=('binary' 'csv' 'hive' 'stage')
-DBNAME='duxbury'
 source /etc/duxbay.conf
 
 for d in "${DSOURCES[@]}" 
