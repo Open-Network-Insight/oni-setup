@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DSOURCES=('flow' 'dns')
+DSOURCES=('flow' 'dns' 'proxy')
 DFOLDERS=('binary' 'csv' 'hive' 'stage')
 source /etc/duxbay.conf
 
