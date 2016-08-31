@@ -4,6 +4,12 @@ DSOURCES=('flow' 'dns' 'proxy')
 DFOLDERS=('binary' 'csv' 'hive' 'stage')
 source /etc/duxbay.conf
 
+#
+# creating HDFS user's folder
+#
+sudo -u hdfs hadoop fs -mkdir ${HUSER}
+sudo -u hdfs hadoop fs -chown ${USER}:supergroup ${HUSER}
+
 for d in "${DSOURCES[@]}" 
 do 
 	echo "creating /$d"
