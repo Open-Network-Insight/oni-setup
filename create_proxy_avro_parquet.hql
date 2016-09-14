@@ -32,10 +32,10 @@ bcappoper             string,
 fulluri               string
 )
 PARTITIONED BY (
-y int, 
-m int, 
-d int, 
-h int)
+y string, 
+m string, 
+d string, 
+h string)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
 STORED AS PARQUET
 LOCATION '${hiveconf:huser}/proxy/hive'
