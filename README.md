@@ -18,7 +18,7 @@ To collaborate and run oni-setup, it is required the following:
 
 ## General Description
 
-The main script in the repository is **hdfs_setup.sh** which is responsible of loading environment variables, creating folders in Hadoop for the different use cases (flow or DNS), create the Hive database, and finally execute hive query scripts that creates Hive tables needed to access netflow and dns data.
+The main script in the repository is **hdfs_setup.sh** which is responsible of loading environment variables, creating folders in Hadoop for the different use cases (flow, DNS or Proxy), create the Hive database, and finally execute hive query scripts that creates Hive tables needed to access netflow, dns and proxy data.
 
 ## Environment Variables
 
@@ -30,7 +30,7 @@ To read more about these variables, please review the [wiki] (https://github.com
 
 ## Database Query Scripts
 
-oni-setup contains a script per use case, as of today, there is a creation script for DNS tables and for Netflow tables.
+oni-setup contains a script per use case, as of today, there is a tables creation script for each DNS, flow and Proxy data.
 
 These HQL scripts are intended to be executed as a Hive statement and must comply HQL standards. 
 
@@ -48,6 +48,10 @@ To get to Avro/parquet format we need a staging table to store CSV data temporar
 - dns - Avro/parquet final table to store DNS records
 - dns_tmp - Text table to store temporarily DNS records in CSV format
 
+#### Proxy Tables
+- proxy - Avro/parquet final table to store Proxy records
+- proxy_tmp - Text table to store temporarily Proxy records in CSV format
+
 ## Licensing
 
 oni-setup is licensed under Apache Version 2.0
@@ -62,6 +66,6 @@ Report issues at the OpenNetworkInsight [issues] (https://github.com/Open-Netwo
  
 ## Maintainers
 
-- [Everardo Lopez Sandoval] (https://github.com/EverLoSa) 
-- [Moises Valdovinos] (https://github.com/moy8011) 
+- [Moises Valdovinos] (https://github.com/moy8011)
+- [Everardo Lopez Sandoval] (https://github.com/EverLoSa)  
 
