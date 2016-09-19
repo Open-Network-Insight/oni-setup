@@ -18,7 +18,7 @@ To collaborate and run oni-setup, it is required the following:
 
 ## General Description
 
-The main script in the repository is **hdfs_setup.sh** which is responsible of loading environment variables, creating folders in Hadoop for the different use cases (flow or DNS), create the Hive database, and finally execute hive query scripts that creates Hive tables needed to access netflow and dns data.
+The main script in the repository is **hdfs_setup.sh** which is responsible of loading environment variables, creating folders in Hadoop for the different use cases (flow, DNS or Proxy), create the Hive database, and finally execute hive query scripts that creates Hive tables needed to access netflow, dns and proxy data.
 
 ## Environment Variables
 
@@ -30,15 +30,15 @@ To read more about these variables, please review the [wiki] (https://github.com
 
 ## Database Query Scripts
 
-oni-setup contains a script per use case, as of today, there is a creation script for DNS tables and for Netflow tables.
+oni-setup contains a script per use case, as of today, there is a tables creation script for each DNS, flow and Proxy data.
 
 These HQL scripts are intended to be executed as a Hive statement and must comply HQL standards. 
 
 We want to create tables in Avro/Parquet format to get a faster query performance. This format is an industry standard and you can find more information about it on:
-- Avro is a data serialization system - https://avro.apache.org/
+- Avro is a data serialization system - https://avro.apache.org/
 - Parquet is a columnar storage format - https://parquet.apache.org/
 
-To get to Avro/parquet format we need a staging table to store CSV data temporarily. Then, run a Hive query statement to insert these text-formatted records into the Avro/parquet table. Hive will manage to convert the text data into the desired format. The staging table must be cleaned after loading data to Avro/parquet table for the next batch cycle. A set of a staging (CSV) and a final (Avro/parquet) tables are needed for each data entity.
+To get to Avro/parquet format we need a staging table to store CSV data temporarily for Flow and DNS. Then, run a Hive query statement to insert these text-formatted records into the Avro/parquet table. Hive will manage to convert the text data into the desired format. The staging table must be cleaned after loading data to Avro/parquet table for the next batch cycle. For Flow and DNS, a set of a staging (CSV) and a final (Avro/parquet) tables are needed for each data entity. For Proxy, only the Avro/parquet table is needed.
 
 #### Flow Tables
 - flow - Avro/parquet final table to store flow records
@@ -47,6 +47,9 @@ To get to Avro/parquet format we need a staging table to store CSV data temporar
 #### DNS Tables
 - dns - Avro/parquet final table to store DNS records
 - dns_tmp - Text table to store temporarily DNS records in CSV format
+
+#### Proxy Tables
+- proxy - Avro/parquet final table to store Proxy records
 
 ## Licensing
 
@@ -62,6 +65,6 @@ Report issues at the OpenNetworkInsight [issues] (https://github.com/Open-Netwo
  
 ## Maintainers
 
-- [Everardo Lopez Sandoval] (https://github.com/EverLoSa) 
-- [Moises Valdovinos] (https://github.com/moy8011) 
+- [Moises Valdovinos] (https://github.com/moy8011)
+- [Everardo Lopez Sandoval] (https://github.com/EverLoSa)  
 
