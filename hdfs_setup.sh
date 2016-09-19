@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DSOURCES=('flow' 'dns' 'proxy')
-DFOLDERS=('binary' 'csv' 'hive' 'stage')
+DFOLDERS=('binary' 'hive' 'stage')
 source /etc/duxbay.conf
 
 for d in "${DSOURCES[@]}" 
