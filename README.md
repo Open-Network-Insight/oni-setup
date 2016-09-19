@@ -35,10 +35,10 @@ oni-setup contains a script per use case, as of today, there is a tables creatio
 These HQL scripts are intended to be executed as a Hive statement and must comply HQL standards. 
 
 We want to create tables in Avro/Parquet format to get a faster query performance. This format is an industry standard and you can find more information about it on:
-- Avro is a data serialization system - https://avro.apache.org/
+- Avro is a data serialization system - https://avro.apache.org/
 - Parquet is a columnar storage format - https://parquet.apache.org/
 
-To get to Avro/parquet format we need a staging table to store CSV data temporarily. Then, run a Hive query statement to insert these text-formatted records into the Avro/parquet table. Hive will manage to convert the text data into the desired format. The staging table must be cleaned after loading data to Avro/parquet table for the next batch cycle. A set of a staging (CSV) and a final (Avro/parquet) tables are needed for each data entity.
+To get to Avro/parquet format we need a staging table to store CSV data temporarily for Flow and DNS. Then, run a Hive query statement to insert these text-formatted records into the Avro/parquet table. Hive will manage to convert the text data into the desired format. The staging table must be cleaned after loading data to Avro/parquet table for the next batch cycle. For Flow and DNS, a set of a staging (CSV) and a final (Avro/parquet) tables are needed for each data entity. For Proxy, only the Avro/parquet table is needed.
 
 #### Flow Tables
 - flow - Avro/parquet final table to store flow records
@@ -50,7 +50,6 @@ To get to Avro/parquet format we need a staging table to store CSV data temporar
 
 #### Proxy Tables
 - proxy - Avro/parquet final table to store Proxy records
-- proxy_tmp - Text table to store temporarily Proxy records in CSV format
 
 ## Licensing
 
