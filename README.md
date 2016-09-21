@@ -6,7 +6,7 @@ This document is intended for any developer or sysadmin interested in technical 
 
 ## Getting Started
 
-This information will help you to get started on contributing to the ONI Setup repository. For information about installing and running ONI go to our [Installation Guide] (https://github.com/Open-Network-Insight/open-network-insight/wiki/Installation%20Guide).
+This information will help you to get started on contributing to the ONI Setup repository. For information about installing and running ONI go to our [Installation Guide] (https://github.com/Open-Network-Insight/open-network-insight/wiki/Installation%20&%20Configuration%20Guides).
 
 oni-setup contains the scripts to setup HDFS for ONI solution. It will create the folder and database structure needed to run ONI on HDFS and HIVE respectively. Oni-setup is a component of Open-Network-Insight and is executed in the initial configuration after Linux user creation and before Ingest installation.
 
